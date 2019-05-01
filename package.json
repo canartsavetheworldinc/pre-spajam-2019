@@ -13,7 +13,9 @@
     "react-native-router-flux": "^4.0.6"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-plugin-inline-import": "^3.0.0",
+    "babel-preset-expo": "^5.0.0",
+    "react-native-svg-uri": "^1.2.3"
   },
   "private": true
 }
