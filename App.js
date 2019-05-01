@@ -1,21 +1,18 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { Router, Stack, Scene } from "react-native-router-flux"
+
+import Home from "./components/Home"
+import Color from "./components/Color"
 
 export default class App extends React.Component {
 	render() {
 		return (
-			<View style={styles.container}>
-				<Text>Open up App.js to start working on your app!</Text>
-			</View>
+			<Router>
+				<Stack key="root">
+					<Scene key="home" component={ Home } title="Home"></Scene>
+					<Scene key="color" component={ Color } title="Color"></Scene>
+				</Stack>
+			</Router>
 		)
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-})
