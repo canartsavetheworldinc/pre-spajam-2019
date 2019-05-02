@@ -1,12 +1,15 @@
 import React from "react"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 import { Dimensions, View } from "react-native"
 import Svg, { Circle } from "react-native-svg"
-import SvgUri from "react-native-svg-uri"
+// import SvgUri from "react-native-svg-uri"
 
 // import Droid from "../assets/android.svg"
+import * as colorActions from "../actions"
 import rgb2hex from "../functions/rgb2hex"
 
-export default class extends React.Component {
+class ColorWheel extends React.Component {
 	render() {
 		const colors = this.props.colors
 		if(!colors)
@@ -15,7 +18,7 @@ export default class extends React.Component {
 		// console.log(dim)
 		const offset = {
 			x: 0,
-			y: -1 * dim.height * 0.23	// 896px で 200px くらい
+			y: -1 * dim.height * 0.2	// 896px で 200px くらい
 		}
 		const origin = {
 			x: dim.width / 2 + offset.x | 0,
@@ -36,7 +39,7 @@ export default class extends React.Component {
 			const fill = rgb2hex(red, green, blue)
 			dots.push(<Circle
 				onPress={e => {
-					console.log(i)
+					this.props.colorActions.pushColor(color)
 				}}
 				key={ i }
 				cx={ x }
@@ -49,11 +52,16 @@ export default class extends React.Component {
 		}
 		// console.log(<SvgUri width={300} height={300} svgXmlData={Drop}></SvgUri>)
 		return (
-			<View>
-				<Svg height={ dim.height } width={ dim.width }>
-				{/* <SvgUri width={300} height={300} svgXmlData={Droid}></SvgUri> */}
-				{ dots }</Svg>
-			</View>
+				<Svg height="70%" width={ dim.width }>{ dots }</Svg>
 		)
 	}
 }
+
+export default connect(
+	state => ({
+		selected: state.color.selected
+	}),
+	dispatch => ({
+		colorActions: bindActionCreators(colorActions, dispatch)
+	})
+)(ColorWheel)
