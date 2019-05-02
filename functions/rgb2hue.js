@@ -1,10 +1,12 @@
 import RGB from "./RGB"
 export default function(color) {
+	if(!(color instanceof RGB))
+		throw new Error("Color must be an instance of RGB.")
 	const R = color.r / 255
-	const G = color.b / 255
+	const G = color.g / 255
 	const B = color.b / 255
 	let H;
-	if(R == G && G == B){
+	if(R === G && G === B){
 		return H
 	}
 	if(R >= G && G >= B){
