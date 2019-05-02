@@ -1,5 +1,6 @@
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
+
 export default class ColorStack extends React.Component {
 	render() {
 		return (
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
   	alignItems: 'center',
     position:'relative',
-    height:80,
+    height:40,
     bottom:0
   }
 })
