@@ -1,12 +1,18 @@
 import React from "react"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 import { Dimensions, View } from "react-native"
 import Svg, { Circle } from "react-native-svg"
 // import SvgUri from "react-native-svg-uri"
 
+<<<<<<< HEAD
 // import Droid from "../assets/android.svg"
+=======
+import * as colorActions from "../actions"
+>>>>>>> handle-state
 import rgb2hex from "../functions/rgb2hex"
 
-export default class extends React.Component {
+class ColorWheel extends React.Component {
 	render() {
 		const colors = this.props.colors
 		if(!colors)
@@ -36,7 +42,11 @@ export default class extends React.Component {
 			const fill = rgb2hex(red, green, blue)
 			dots.push(<Circle
 				onPress={e => {
+<<<<<<< HEAD
 					console.log(i)
+=======
+					this.props.colorActions.pushColor(color)
+>>>>>>> handle-state
 				}}
 				key={ i }
 				cx={ x }
@@ -53,3 +63,12 @@ export default class extends React.Component {
 		)
 	}
 }
+
+export default connect(
+	state => ({
+		selected: state.color.selected
+	}),
+	dispatch => ({
+		colorActions: bindActionCreators(colorActions, dispatch)
+	})
+)(ColorWheel)
