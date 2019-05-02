@@ -5,11 +5,8 @@ import { Dimensions, View } from "react-native"
 import Svg, { Circle } from "react-native-svg"
 // import SvgUri from "react-native-svg-uri"
 
-<<<<<<< HEAD
 // import Droid from "../assets/android.svg"
-=======
 import * as colorActions from "../actions"
->>>>>>> handle-state
 import rgb2hex from "../functions/rgb2hex"
 
 class ColorWheel extends React.Component {
@@ -42,11 +39,7 @@ class ColorWheel extends React.Component {
 			const fill = rgb2hex(red, green, blue)
 			dots.push(<Circle
 				onPress={e => {
-<<<<<<< HEAD
-					console.log(i)
-=======
 					this.props.colorActions.pushColor(color)
->>>>>>> handle-state
 				}}
 				key={ i }
 				cx={ x }
