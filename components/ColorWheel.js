@@ -35,6 +35,9 @@ export default class extends React.Component {
 			const stroke = rgb2hex(red * 0.85, green * 0.85, blue * 0.85)
 			const fill = rgb2hex(red, green, blue)
 			dots.push(<Circle
+				onPress={e => {
+					console.log(i)
+				}}
 				key={ i }
 				cx={ x }
 				cy={ y }
