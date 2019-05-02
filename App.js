@@ -9,7 +9,7 @@ export default class App extends React.Component {
 		return (
 			<Router>
 				<Stack key="root">
-					<Scene key="home" component={ Home } title="Home"></Scene>
+					{/* <Scene key="home" component={ Home } title="Home"></Scene> */}
 					<Scene key="color" component={ Color } title="Color"></Scene>
 				</Stack>
 			</Router>

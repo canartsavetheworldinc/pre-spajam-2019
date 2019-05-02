@@ -1,7 +1,9 @@
 import React from "react"
 import { Dimensions, View } from "react-native"
 import Svg, { Circle } from "react-native-svg"
+import SvgUri from "react-native-svg-uri"
 
+// import Droid from "../assets/android.svg"
 import rgb2hex from "../functions/rgb2hex"
 
 export default class extends React.Component {
@@ -33,6 +35,9 @@ export default class extends React.Component {
 			const stroke = rgb2hex(red * 0.85, green * 0.85, blue * 0.85)
 			const fill = rgb2hex(red, green, blue)
 			dots.push(<Circle
+				onPress={e => {
+					console.log(i)
+				}}
 				key={ i }
 				cx={ x }
 				cy={ y }
@@ -42,9 +47,12 @@ export default class extends React.Component {
 				fill={ fill }>
 			</Circle>)
 		}
+		// console.log(<SvgUri width={300} height={300} svgXmlData={Drop}></SvgUri>)
 		return (
 			<View>
-				<Svg height={ dim.height } width={ dim.width }>{ dots }</Svg>
+				<Svg height={ dim.height } width={ dim.width }>
+				{/* <SvgUri width={300} height={300} svgXmlData={Droid}></SvgUri> */}
+				{ dots }</Svg>
 			</View>
 		)
 	}
