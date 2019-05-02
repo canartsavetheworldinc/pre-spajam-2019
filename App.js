@@ -7,12 +7,14 @@ import Color from "./components/Color"
 export default class App extends React.Component {
 	render() {
 		return (
-			<Router>
-				<Stack key="root">
-					{/* <Scene key="home" component={ Home } title="Home"></Scene> */}
-					<Scene key="color" component={ Color } title="Color"></Scene>
-				</Stack>
-			</Router>
+			<Provider store={ store }>
+				<Router>
+					<Stack key="root">
+						{/* <Scene key="home" component={ Home } title="Home"></Scene> */}
+						<Scene key="color" component={ Color } back="true" title=""></Scene>
+					</Stack>
+				</Router>
+			</Provider>
 		)
 	}
 }
