@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   container: {
   	alignItems: 'center',
     position:'relative',
-    padding:10
+    height:80,
+    bottom:0
   }
 })

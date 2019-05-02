@@ -2,7 +2,6 @@ import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { Actions } from "react-native-router-flux"
 import Button from "./Button"
-import ColorStackPanel from "./ColorStackPanel"
 export default class extends React.Component {
 	handlePress = () =>  {
 		Actions.color()
@@ -10,11 +9,7 @@ export default class extends React.Component {
 	render() {
 		return (
 			<View>
-				<Button onPress = {this.handlePress} name = "春" spring/>
-				<Button onPress = {this.handlePress} name = "夏" summer/>
-				<Button onPress = {this.handlePress} name = "秋" fall/>
-				<Button onPress = {this.handlePress} name = "冬" winter/>
-				<ColorStackPanel/>
+				<Button onPress = {this.handlePress} name = "Color"/>
 			</View>
 		)
 	}

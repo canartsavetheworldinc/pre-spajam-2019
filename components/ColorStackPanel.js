@@ -1,6 +1,5 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
-import { Actions } from "react-native-router-flux"
 import ColorStack from "./ColorStack"
 export default class extends React.Component {
 	render() {
