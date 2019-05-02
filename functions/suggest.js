@@ -25,12 +25,12 @@ function colorWheel(n) {
 
 function colorSuggest(color){
 	const ret = []
-	console.log(color)
+	//console.log(color)
 	ret.push(color)
 	const baseAngle = rgb2hue(color)
 	const suggestAngles = [45,120,135,180,225,240,315]
-	console.log(baseAngle)
-	
+	//console.log(baseAngle)
+
 	for(let i in suggestAngles){
 		let suggestAngle = baseAngle + suggestAngles[i]
 		if((suggestAngle / 360) > 1){
