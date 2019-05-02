@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "noname",
+    "name": "Palette Petal",
     "slug": "pre-spajam-2019",
     "privacy": "public",
     "sdkVersion": "32.0.0",
@@ -23,7 +23,11 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.casw.palettepetal",
       "supportsTablet": true
+    },
+    "android": {
+      "bundleIdentifier": "com.casw.palettepetal"
     }
   }
 }
