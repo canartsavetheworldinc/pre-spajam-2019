@@ -3,11 +3,10 @@ import hsv2rgb from "./hsv2rgb"
 import rgb2hue from "./rgb2hue"
 
 export default function(color) {
-	// if(!color){
-	// 	return colorWheel(8)
-	// }
-	return colorSuggest(new RGB(0,0,255))
-	//return [new RGB(255, 60, 130), new RGB(255, 90, 130), new RGB(255, 120, 130), new RGB(255, 150, 130), new RGB(255, 180, 130), new RGB(255, 210, 130), new RGB(255, 240, 130)]
+	if(!color){
+		return colorWheel(8)
+	}
+	return colorSuggest(color)
 }
 
 function colorWheel(n) {
