@@ -30,7 +30,6 @@ class ColorPreview extends React.Component {
 			const fill = rgb2hex(red, green, blue)
 			rects.push(<Rect
 				onPress={e => {
-					this.props.colorActions.pushColor(color)
 				}}
 				key={ i }
 				x={ x }
