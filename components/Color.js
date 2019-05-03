@@ -4,18 +4,25 @@ import { connect } from "react-redux"
 import { StyleSheet, Text, View } from "react-native"
 
 import ColorWheel from "./ColorWheel"
+import Result from "./Result"
 import suggest from "../functions/suggest"
 import ColorStackPanel from "./ColorStackPanel"
 import * as colorActions from "../actions"
 
+const colorStackHeight = 150
+
 class Color extends React.Component {
 	render() {
-		const lastSelected = this.props.selected.slice(-1)[0]
+		const selected = this.props.selected
+		const lastSelected = selected.slice(-1)[0]
 		return (
 			<View style={ styles.container }>
-				<ColorStackPanel colors={ this.props.selected } order="asc" />
-				<ColorWheel colors={ suggest(lastSelected) }></ColorWheel>
-				<ColorStackPanel colors={ this.props.selected } order="desc" />
+				<ColorStackPanel height={ colorStackHeight } colors={ this.props.selected } order="asc" />
+				<View style={ styles.content }>
+					{ selected.length < 4 && <ColorWheel height={ -1 * colorStackHeight * 2 } zIndex={ 100 } colors={ suggest(lastSelected) }></ColorWheel> }
+					{ selected.length >= 4 && <Result></Result> }
+				</View>
+				<ColorStackPanel height={ colorStackHeight } colors={ this.props.selected } order="desc" />
 			</View>
 		)
 	}
@@ -23,8 +30,10 @@ class Color extends React.Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		justifyContent: "space-between"
+		flex: 1
+	},
+	content: {
+		flexGrow: 1
 	}
 })
 

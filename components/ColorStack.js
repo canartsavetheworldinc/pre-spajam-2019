@@ -3,18 +3,9 @@ import { StyleSheet, Text, View } from "react-native"
 
 export default class ColorStack extends React.Component {
 	render() {
+		const { height } = this.props
 		return (
-			<View style = {[styles.container,{backgroundColor:this.props.color}]}>
-				<Text></Text>
-			</View>
+			<View height={ height || 40 } style = { { backgroundColor:this.props.color } }></View>
 		)
 	}
 }
-const styles = StyleSheet.create({
-  container: {
-  	alignItems: 'center',
-    position:'relative',
-    height:40,
-    bottom:0
-  }
-})

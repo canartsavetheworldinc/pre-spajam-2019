@@ -11,14 +11,20 @@ import rgb2hex from "../functions/rgb2hex"
 
 class ColorWheel extends React.Component {
 	render() {
-		const { colors, zIndex } = this.props
+		const { colors } = this.props
+		let { zIndex, height } = this.props
 		if(!colors)
 			throw new Error(`colors is not defined`)
 		const dim = Dimensions.get("window")
 		// console.log(dim)
+
+		height = +height
+		if(height < 0)
+			height += dim.height
+
 		const offset = {
 			x: 0,
-			y: -1 * dim.height * 0.2	// 896px で 200px くらい
+			y: -1 * dim.height * 0.18
 		}
 		const origin = {
 			x: dim.width / 2 + offset.x | 0,
@@ -51,7 +57,9 @@ class ColorWheel extends React.Component {
 			</Circle>)
 		}
 		return (
-			<Svg zIndex={ zIndex || 0 } height="70%" width={ dim.width }>{ dots }</Svg>
+			<View>
+				<Svg zIndex={ zIndex || 0 } height={ height || "100%" } width={ dim.width }>{ dots }</Svg>
+			</View>
 		)
 	}
 }
