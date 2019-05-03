@@ -24,7 +24,7 @@ class ColorWheel extends React.Component {
 
 		const offset = {
 			x: 0,
-			y: -1 * dim.height * 0.18
+			y: -1 * dim.height * 0.2
 		}
 		const origin = {
 			x: dim.width / 2 + offset.x | 0,
@@ -58,7 +58,7 @@ class ColorWheel extends React.Component {
 		}
 		return (
 			<View>
-				<Svg zIndex={ zIndex || 0 } height={ height || "100%" } width={ dim.width }>{ dots }</Svg>
+				<Svg zIndex={ zIndex || 0 } viewBox={ `0 0 ${ dim.width } ${ height }` } height={ height || "100%" } width={ dim.width }>{ dots }</Svg>
 			</View>
 		)
 	}

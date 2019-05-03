@@ -14,7 +14,7 @@ class Result extends React.Component {
 				<View style={ styles.content }>
 					<Text>{ JSON.stringify(this.props.selected) }</Text>
 				</View>
-				<View>
+				<View style={ styles.buttonContainer }>
 					<Button onPress={ this.props.colorActions.resetColor } name="Reset"></Button>
 				</View>
 			</View>
@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
 	},
 	content: {
 		flexGrow: 1
+	},
+	buttonContainer: {
+		margin: 40
 	}
 })
 
