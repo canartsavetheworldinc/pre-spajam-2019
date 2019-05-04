@@ -30,7 +30,8 @@ class Color extends React.Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		backgroundColor: "#cfcfcf"
 	},
 	content: {
 		flexGrow: 1

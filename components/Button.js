@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 
 export default class Button extends React.Component {
@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ccc",
     paddingRight: 30,
     paddingLeft: 30,
+    backgroundColor: "#efefef",
     height: "100%",
     borderRadius: 10
   },
