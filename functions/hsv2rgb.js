@@ -1,13 +1,13 @@
 import RGB from "./RGB"
 
 export default function(h, s, v = 1) {
+	const c = v * s
 	if(h === undefined)
-		return new RGB()
+		return new RGB(v-c,v-c,v-c)
 	if(h < 0)
 		h *= -1
 	if(h >= 360)
 		h = h % 360
-	const c = v * s
 	const hp = h / 60
 	const x = c * (1 - Math.abs(hp % 2 - 1))
 	let ret = new RGB()
