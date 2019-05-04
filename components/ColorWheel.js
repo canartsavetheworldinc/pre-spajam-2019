@@ -24,13 +24,21 @@ class ColorWheel extends React.Component {
 
 		const offset = {
 			x: 0,
-			y: -1 * dim.height * 0.2
+			y: 0
 		}
 		const origin = {
 			x: dim.width / 2 + offset.x | 0,
-			y: dim.height / 2 + offset.y | 0
+			y: height / 2 + offset.y | 0
 		}
-		const r = dim.width * 0.33	// 414px で 150px くらい
+		// const offset = {
+		// 	x: 0,
+		// 	y: -1 * dim.height * 0.26
+		// }
+		// const origin = {
+		// 	x: dim.width / 2 + offset.x | 0,
+		// 	y: dim.height / 2 + offset.y | 0
+		// }
+		const r = dim.width * 0.3
 		let dots = []
 		for(let i in colors) {
 			const n = colors.length

@@ -9,7 +9,7 @@ import suggest from "../functions/suggest"
 import ColorStackPanel from "./ColorStackPanel"
 import * as colorActions from "../actions"
 
-const colorStackHeight = 150
+const colorStackHeight = 180
 
 class Color extends React.Component {
 	render() {
