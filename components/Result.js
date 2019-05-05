@@ -13,7 +13,6 @@ class Result extends React.Component {
 		return (
 			<View style={ styles.container }>
 				<View style={ styles.content }>
-					<Text>{ JSON.stringify(this.props.selected) }</Text>
 					<View style={ styles.preview }>
 						<ColorPreview colors={ this.props.selected }></ColorPreview>
 					</View>
@@ -31,7 +30,8 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	content: {
-		flexGrow: 1
+		flexGrow: 1,
+		justifyContent: "center"
 	},
 	preview: {
 		marginTop: 40,
