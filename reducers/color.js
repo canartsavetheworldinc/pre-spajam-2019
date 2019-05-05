@@ -1,4 +1,4 @@
-import { COLOR_PUSH, COLOR_POP } from "../constants"
+import { COLOR_PUSH, COLOR_POP, COLOR_RESET } from "../constants"
 
 const initialState = {
 	selected: []
@@ -18,6 +18,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				selected: state.selected.slice(0, -1)
+			}
+		case COLOR_RESET:
+			return {
+				...state,
+				selected: []
 			}
 		default:
 			return state
